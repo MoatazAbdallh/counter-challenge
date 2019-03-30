@@ -1,0 +1,123 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CounterTask</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.moataz.counter</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CounterTask (com.moataz.counter)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CounterTask</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (2/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.1%
+  </span>
+  <span class="absValue">
+    (16/ 17)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.moataz.counter;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.Timer;
+<i>4</i>&nbsp;import java.util.TimerTask;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;public class CounterTask extends TimerTask {
+<i>7</i>&nbsp;    private int currentValue;
+<i>8</i>&nbsp;    private int endValue;
+<i>9</i>&nbsp;    private Timer timer;
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;    public CounterTask(int startValue, int endValue, Timer timer) {</b>
+<b class="fc"><i>12</i>&nbsp;        currentValue = startValue;</b>
+<b class="fc"><i>13</i>&nbsp;        this.endValue = endValue;</b>
+<b class="fc"><i>14</i>&nbsp;        this.timer = timer;</b>
+<b class="fc"><i>15</i>&nbsp;    }</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    public int getCurrentValue() {
+<b class="nc"><i>18</i>&nbsp;        return currentValue;</b>
+<i>19</i>&nbsp;    }
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    @Override
+<i>22</i>&nbsp;    public void run() {
+<b class="fc"><i>23</i>&nbsp;        System.out.print(currentValue + &quot;\n&quot;);</b>
+<i>24</i>&nbsp;
+<b class="fc"><i>25</i>&nbsp;        if (currentValue % 3 == 0 &amp;&amp; currentValue % 5 == 0) {</b>
+<b class="fc"><i>26</i>&nbsp;            System.out.print(&quot;fooboo\n&quot;);</b>
+<i>27</i>&nbsp;        } else {
+<b class="fc"><i>28</i>&nbsp;            if (currentValue % 3 == 0) {</b>
+<b class="fc"><i>29</i>&nbsp;                System.out.print(&quot;foo\n&quot;);</b>
+<i>30</i>&nbsp;            }
+<b class="fc"><i>31</i>&nbsp;            if (currentValue % 5 == 0) {</b>
+<b class="fc"><i>32</i>&nbsp;                System.out.print(&quot;boo\n&quot;);</b>
+<i>33</i>&nbsp;            }
+<i>34</i>&nbsp;        }
+<b class="fc"><i>35</i>&nbsp;        currentValue++;</b>
+<b class="fc"><i>36</i>&nbsp;        if (currentValue &gt; endValue) {</b>
+<b class="fc"><i>37</i>&nbsp;            timer.cancel();</b>
+<i>38</i>&nbsp;        }
+<b class="fc"><i>39</i>&nbsp;    }</b>
+<i>40</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-03-30 19:35</div>
+</div>
+</body>
+</html>
