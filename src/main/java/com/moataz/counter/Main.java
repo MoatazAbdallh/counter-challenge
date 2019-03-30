@@ -46,7 +46,7 @@ public class Main {
             t.scheduleAtFixedRate(counterTask, 2000, 1000);
         } catch (ParameterException exception) {
             System.out.print(exception.getMessage());
-
+            System.exit(1);
         }
     }
 }
